@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c33dof8ta8w45"]
+
+[ext_resource type="Script" path="res://scripts/area.gd" id="1_7u3i0"]
+[ext_resource type="Texture2D" uid="uid://cr1ug1y2q0wfg" path="res://assets/placa.png" id="1_qrke2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uenb"]
+size = Vector2(16, 16)
+
+[node name="placa" type="Area2D"]
+script = ExtResource("1_7u3i0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qrke2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0uenb")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -107.0
+offset_top = -32.0
+offset_right = 114.0
+offset_bottom = -9.0
+text = "DESENVOLVIDO POR NICOLY"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

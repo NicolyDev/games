@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmd6pwqvwvd8y"]
+
+[ext_resource type="Texture2D" uid="uid://dlmh8pvl231uc" path="res://assets/bandeira.png" id="1_0n3vb"]
+[ext_resource type="Script" path="res://scripts/saida.gd" id="1_2v3dd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adghu"]
+size = Vector2(103, 60)
+
+[node name="saida" type="Area2D"]
+script = ExtResource("1_2v3dd")
+
+[node name="textu" type="Sprite2D" parent="."]
+texture = ExtResource("1_0n3vb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 4)
+shape = SubResource("RectangleShape2D_adghu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
